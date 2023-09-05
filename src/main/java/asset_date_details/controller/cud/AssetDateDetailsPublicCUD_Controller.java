@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -16,6 +17,7 @@ import asset_date_details.model.dto.AssetDateDetail_DTO;
 import asset_date_details.model.master.AssetDateDetailPK;
 import asset_date_details.service.cud.I_AssetDateDetailsPublicCUD_Service;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/assetDateDetailsPublicCUDMgmt")
 public class AssetDateDetailsPublicCUD_Controller {
