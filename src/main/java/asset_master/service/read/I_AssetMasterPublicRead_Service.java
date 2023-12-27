@@ -10,4 +10,5 @@ public interface I_AssetMasterPublicRead_Service
     public CompletableFuture<Character> getAssetDoneStatus(Long id);
     public CompletableFuture<CopyOnWriteArrayList<AssetMaster_DTO>> getSelectAssetsByResources(CopyOnWriteArrayList<Long> ids);    
     public CompletableFuture<CopyOnWriteArrayList<AssetMaster_DTO>> getSelectAssets(CopyOnWriteArrayList<Long> ids);
+    public CompletableFuture<Character> getAssetStatus(Long id);
 }

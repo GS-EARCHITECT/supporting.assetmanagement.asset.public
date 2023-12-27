@@ -33,6 +33,17 @@ public class AssetMaster implements Serializable {
 	@Column(name = "SPECIFICATION_SEQ_NO")
 	private Long specSeqNo;
 
+	@Column(name = "STATUS")
+	private Character status;
+
+	public Character getStatus() {
+		return status;
+	}
+
+	public void setStatus(Character status) {
+		this.status = status;
+	}
+
 	public Long getAssetSeqNo() {
 		return assetSeqNo;
 	}
@@ -117,7 +128,7 @@ public class AssetMaster implements Serializable {
 	}
 
 	public AssetMaster(Long assetSeqNo, Character doneFlag, String asset, String assetId, Long resourceSeqNo,
-			Long specSeqNo) {
+			Long specSeqNo, Character status) {
 		super();
 		this.assetSeqNo = assetSeqNo;
 		this.doneFlag = doneFlag;
@@ -125,6 +136,7 @@ public class AssetMaster implements Serializable {
 		this.assetId = assetId;
 		this.resourceSeqNo = resourceSeqNo;
 		this.specSeqNo = specSeqNo;
+		this.status = status;
 	}
 
 }

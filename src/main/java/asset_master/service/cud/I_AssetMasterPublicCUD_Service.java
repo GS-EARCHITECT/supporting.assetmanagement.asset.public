@@ -9,7 +9,8 @@ public interface I_AssetMasterPublicCUD_Service
 {
     public CompletableFuture<AssetMaster_DTO> newAssetMaster(AssetMaster_DTO resourceCategoryMasterDTO);
     public CompletableFuture<Void> updAssetMaster(AssetMaster_DTO AssetMaster_DTO);
-    public CompletableFuture<Void> setAssetDoneStatus(Long id, Character st);;
+    public CompletableFuture<Void> setAssetDoneStatus(Long id, Character st);
+    public CompletableFuture<Void> setAssetStatus(Long id, Character st);
     public CompletableFuture<Void> delAllAssetMasters();    
     public CompletableFuture<Void> delSelectAssets(CopyOnWriteArrayList<Long> ids);
     public CompletableFuture<Void> delSelectAssetsByResources(CopyOnWriteArrayList<Long> ids);

@@ -22,5 +22,8 @@ public interface AssetMasterPublicRead_Repo extends JpaRepository<AssetMaster, L
 
 	@Query(value = "SELECT doneflag FROM ASSET_MASTER a WHERE a.asset_seq_no = :id", nativeQuery = true)
 	Character getAssetDoneStatus(@Param("id") Long id);
+	
+	@Query(value = "SELECT status FROM ASSET_MASTER a WHERE a.asset_seq_no = :id", nativeQuery = true)
+	Character getAssetStatus(@Param("id") Long id);
 
 }

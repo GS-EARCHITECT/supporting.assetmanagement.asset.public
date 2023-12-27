@@ -54,10 +54,18 @@ public class AssetMasterPublicRead_Controller {
 		
 	}
 
+	@GetMapping(value = "/getDoneStatus/{assetSeqNo}", produces = { MediaType.APPLICATION_JSON_VALUE })
+	public ResponseEntity<Character> getAssetDoneStatus(@PathVariable Long assetSeqNo) 
+	{
+		CompletableFuture<Character> completableFuture = assetMasterPublicReadServ.getAssetDoneStatus(assetSeqNo);
+		Character assetSt = completableFuture.join();
+		return new ResponseEntity<>(assetSt, HttpStatus.OK);
+	}
+	
 	@GetMapping(value = "/getStatus/{assetSeqNo}", produces = { MediaType.APPLICATION_JSON_VALUE })
 	public ResponseEntity<Character> getAssetStatus(@PathVariable Long assetSeqNo) 
 	{
-		CompletableFuture<Character> completableFuture = assetMasterPublicReadServ.getAssetDoneStatus(assetSeqNo);
+		CompletableFuture<Character> completableFuture = assetMasterPublicReadServ.getAssetStatus(assetSeqNo);
 		Character assetSt = completableFuture.join();
 		return new ResponseEntity<>(assetSt, HttpStatus.OK);
 	}

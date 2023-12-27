@@ -47,12 +47,19 @@ public class AssetMasterPublicCUD_Controller {
 	}
 
 	@PutMapping("/updAssetDoneStatus{assetSeqNo}/{assetSt]")
-	public void updateAssetStatus(@PathVariable Long id, @PathVariable Character assetSt) 
+	public void updateAssetDoneStatus(@PathVariable Long id, @PathVariable Character assetSt) 
 	{
 		assetMasterPublicCUDServ.setAssetDoneStatus(id, assetSt);
 		return;
 	}
 
+	@PutMapping("/updAssetStatus{assetSeqNo}/{assetSt]")
+	public void updateAssetStatus(@PathVariable Long id, @PathVariable Character assetSt) 
+	{
+		assetMasterPublicCUDServ.setAssetStatus(id, assetSt);
+		return;
+	}
+	
 	@DeleteMapping("/delSelectasset")
 	public void deleteSelectasset(@RequestBody CopyOnWriteArrayList<Long> assetSeqNoList) 
 	{

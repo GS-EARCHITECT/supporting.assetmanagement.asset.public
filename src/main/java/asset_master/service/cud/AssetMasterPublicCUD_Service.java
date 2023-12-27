@@ -45,6 +45,16 @@ public class AssetMasterPublicCUD_Service implements I_AssetMasterPublicCUD_Serv
 		return future;
 	}
 	
+	public CompletableFuture<Void> setAssetStatus(Long id, Character st)
+	{
+		CompletableFuture<Void> future = CompletableFuture.runAsync(() -> 
+		{
+		assetMasterPublicCUDRepo.setAssetStatus(id, st);
+		return ;
+   		},asyncExecutor);
+		return future;
+	}
+	
 	public CompletableFuture<Void> updAssetMaster(AssetMaster_DTO lMaster) 
 	{
 		CompletableFuture<Void> future = CompletableFuture.runAsync(() -> 

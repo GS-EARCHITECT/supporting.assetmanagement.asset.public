@@ -68,6 +68,16 @@ public class AssetMasterPublicRead_Service implements I_AssetMasterPublicRead_Se
 		return future;
 	}
 	
+	public CompletableFuture<Character> getAssetStatus(Long id)
+	{
+		CompletableFuture<Character> future = CompletableFuture.supplyAsync(() -> 
+		{
+		Character assetSt = assetMasterPublicReadRepo.getAssetStatus(id);		
+		return assetSt;
+   		},asyncExecutor);
+		return future;
+	}
+	
 	private synchronized CopyOnWriteArrayList<AssetMaster_DTO> getAssetMaster_DTOs(CopyOnWriteArrayList<AssetMaster> lMasters) 
 	{
 		AssetMaster_DTO lDTO = null;
@@ -85,6 +95,7 @@ public class AssetMasterPublicRead_Service implements I_AssetMasterPublicRead_Se
 		lDTO.setDoneFlag(lMaster.getDoneFlag());
 		lDTO.setAssetSeqNo(lMaster.getAssetSeqNo());
 		lDTO.setAsset(lMaster.getAsset());
+		lDTO.setStatus(lMaster.getStatus());
 		lDTO.setAssetId(lMaster.getAssetId());
 		lDTO.setResourceSeqNo(lMaster.getResourceSeqNo());
 		lDTO.setSpecSeqNo(lMaster.getSpecSeqNo());

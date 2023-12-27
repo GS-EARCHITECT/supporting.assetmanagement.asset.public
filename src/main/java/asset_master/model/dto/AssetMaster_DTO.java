@@ -14,6 +14,15 @@ public class AssetMaster_DTO implements Serializable {
 	private Long resourceSeqNo;
 	private Long specSeqNo;
 	private Character doneFlag;
+	private Character status;
+
+	public Character getStatus() {
+		return status;
+	}
+
+	public void setStatus(Character status) {
+		this.status = status;
+	}
 
 	public Character getDoneFlag() {
 		return doneFlag;
@@ -68,7 +77,7 @@ public class AssetMaster_DTO implements Serializable {
 	}
 
 	public AssetMaster_DTO(Long assetSeqNo, String asset, String assetId, Long resourceSeqNo, Long specSeqNo,
-			Character doneFlag) {
+			Character doneFlag, Character status) {
 		super();
 		this.assetSeqNo = assetSeqNo;
 		this.asset = asset;
@@ -76,6 +85,7 @@ public class AssetMaster_DTO implements Serializable {
 		this.resourceSeqNo = resourceSeqNo;
 		this.specSeqNo = specSeqNo;
 		this.doneFlag = doneFlag;
+		this.status = status;
 	}
 
 }
